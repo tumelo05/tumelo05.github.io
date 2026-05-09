@@ -52,7 +52,7 @@ nav a {
   gap:40px;
 }
 
-.hero img {
+.hero img.profile {
   width:260px;
   border-radius:50%;
   box-shadow:0 0 40px rgba(56,189,248,0.3);
@@ -66,6 +66,22 @@ h1 {
   color:#38bdf8;
   margin-top:10px;
   height:24px;
+}
+
+/* ICONS */
+.icons {
+  margin-top:20px;
+}
+
+.icons img {
+  width:32px;
+  margin-right:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.icons img:hover {
+  transform:scale(1.2);
 }
 
 /* BUTTONS */
@@ -83,7 +99,7 @@ h1 {
   color:#020617;
 }
 
-/* CARDS */
+/* PROJECTS */
 .projects {
   padding:80px 8%;
 }
@@ -98,6 +114,17 @@ h1 {
 
 .card:hover {
   transform:translateY(-5px);
+}
+
+.project-link {
+  display:inline-block;
+  margin-top:10px;
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+.project-link:hover {
+  text-decoration:underline;
 }
 
 /* TOGGLE */
@@ -143,11 +170,17 @@ footer {
     <h1>Data Engineer & Analyst</h1>
     <div class="typing" id="typing"></div>
 
-    <a class="btn btn-primary" href="https://github.com/tumelo05" target="_blank">GitHub</a>
-    <a class="btn btn-primary" href="https://linkedin.com/in/tumelo-sethosa" target="_blank">LinkedIn</a>
+    <div class="icons">
+      <a href="https://github.com/tumelo05" target="_blank">
+        <img src="https://img.favpng.com/20/3/17/github-computer-icons-logo-repository-png-favpng-3D6iEY0b391hz9PYJZqnvKTLT.jpg">
+      </a>
+      <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">
+        <img src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png">
+      </a>
+    </div>
   </div>
 
-  <img src="https://i.imgur.com/54Hykuy.jpeg" alt="profile">
+  <img class="profile" src="https://i.imgur.com/54Hykuy.jpeg">
 </section>
 
 <section class="projects hidden" id="projects">
@@ -156,22 +189,36 @@ footer {
   <div class="card">
     <h3>Customer Analytics</h3>
     <p>SQL + Power BI dashboard solution</p>
+    <a class="project-link" href="https://github.com/tumelo05/customer-transactions-analytics" target="_blank">
+      View Project →
+    </a>
   </div>
 
   <div class="card">
     <h3>Fleet Pipeline</h3>
     <p>Spark ETL pipeline with PostgreSQL</p>
+    <a class="project-link" href="https://github.com/tumelo05/fleet-analytics" target="_blank">
+      View Project →
+    </a>
   </div>
 
   <div class="card">
     <h3>CRM Backend</h3>
     <p>FastAPI + SQL backend</p>
+    <a class="project-link" href="https://github.com/tumelo05/crm-python-sql" target="_blank">
+      View Project →
+    </a>
   </div>
 </section>
 
 <section id="contact" class="hidden" style="padding:80px 8%">
   <h2>Contact</h2>
-  <p>LinkedIn: <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">tumelo-sethosa</a></p>
+  <p>
+    LinkedIn:
+    <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">
+      linkedin.com/in/tumelo-sethosa
+    </a>
+  </p>
 </section>
 
 <footer>
@@ -179,15 +226,14 @@ footer {
 </footer>
 
 <script>
-/* YEAR */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* THEME TOGGLE */
+/* THEME */
 function toggleTheme() {
   document.body.classList.toggle("light-mode");
 }
 
-/* TYPING EFFECT */
+/* TYPING */
 const roles = [
   "Building ETL Pipelines",
   "Designing Data Systems",
@@ -198,8 +244,7 @@ let i = 0, j = 0, current = "", isDeleting = false;
 
 function type() {
   current = roles[i];
-  document.getElementById("typing").textContent =
-    current.substring(0, j);
+  document.getElementById("typing").textContent = current.substring(0, j);
 
   if(!isDeleting && j < current.length) {
     j++;
@@ -213,15 +258,12 @@ function type() {
     setTimeout(type, 1000);
   }
 }
-
 type();
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
+    if(entry.isIntersecting) entry.target.classList.add("show");
   });
 });
 
