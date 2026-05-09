@@ -58,9 +58,7 @@ nav a {
   box-shadow:0 0 40px rgba(56,189,248,0.3);
 }
 
-h1 {
-  font-size:48px;
-}
+h1 { font-size:48px; }
 
 .typing {
   color:#38bdf8;
@@ -84,26 +82,35 @@ h1 {
   transform:scale(1.2);
 }
 
-/* BUTTONS */
-.btn {
-  padding:12px 18px;
-  border-radius:8px;
-  text-decoration:none;
-  margin-right:10px;
-  display:inline-block;
-  margin-top:20px;
-}
-
-.btn-primary {
-  background:#38bdf8;
-  color:#020617;
-}
-
-/* PROJECTS */
-.projects {
+/* SECTIONS */
+section {
   padding:80px 8%;
 }
 
+.section-title {
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+/* SKILLS */
+.skills-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill {
+  background: var(--card);
+  padding:10px 16px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.skill:hover {
+  transform:translateY(-3px);
+}
+
+/* PROJECTS */
 .card {
   background: var(--card);
   padding:20px;
@@ -116,6 +123,12 @@ h1 {
   transform:translateY(-5px);
 }
 
+.tech-stack {
+  color:#38bdf8;
+  margin-top:10px;
+  font-size:14px;
+}
+
 .project-link {
   display:inline-block;
   margin-top:10px;
@@ -123,8 +136,9 @@ h1 {
   text-decoration:none;
 }
 
-.project-link:hover {
-  text-decoration:underline;
+/* LEARNING */
+.learning ul {
+  margin-left:20px;
 }
 
 /* TOGGLE */
@@ -135,7 +149,7 @@ h1 {
   border-radius:6px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 .hidden {
   opacity:0;
   transform:translateY(30px);
@@ -159,6 +173,7 @@ footer {
 <nav>
   <h2>Tumelo Sethosa</h2>
   <div>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌗</span>
@@ -183,36 +198,79 @@ footer {
   <img class="profile" src="https://i.imgur.com/54Hykuy.jpeg">
 </section>
 
-<section class="projects hidden" id="projects">
-  <h2>Projects</h2>
+<!-- TECH STACK -->
+<section id="skills" class="hidden">
+  <h2 class="section-title">Tech Stack</h2>
+  <div class="skills-grid">
+    <div class="skill">Python</div>
+    <div class="skill">SQL</div>
+    <div class="skill">PySpark</div>
+    <div class="skill">PostgreSQL</div>
+    <div class="skill">SQL Server</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">Docker</div>
+    <div class="skill">ETL Pipelines</div>
+    <div class="skill">Data Modelling</div>
+    <div class="skill">Git</div>
+    <div class="skill">FastAPI</div>
+    <div class="skill">REST APIs</div>
+    <div class="skill">NLP</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="hidden">
+  <h2 class="section-title">Featured Projects</h2>
 
   <div class="card">
-    <h3>Customer Analytics</h3>
-    <p>SQL + Power BI dashboard solution</p>
+    <h3>Customer Transactions Analytics</h3>
+    <p>
+      End-to-end analytics solution transforming raw transaction data into structured business insights.
+    </p>
+    <div class="tech-stack">Python • SQL Server • Power BI • ETL</div>
     <a class="project-link" href="https://github.com/tumelo05/customer-transactions-analytics" target="_blank">
       View Project →
     </a>
   </div>
 
   <div class="card">
-    <h3>Fleet Pipeline</h3>
-    <p>Spark ETL pipeline with PostgreSQL</p>
+    <h3>Fleet Analytics Pipeline</h3>
+    <p>
+      Spark ETL pipeline converting raw fleet data into curated datasets for analytics.
+    </p>
+    <div class="tech-stack">PySpark • PostgreSQL • Docker • JDBC</div>
     <a class="project-link" href="https://github.com/tumelo05/fleet-analytics" target="_blank">
       View Project →
     </a>
   </div>
 
   <div class="card">
-    <h3>CRM Backend</h3>
-    <p>FastAPI + SQL backend</p>
+    <h3>CRM Backend System</h3>
+    <p>
+      Backend CRM system with relational modelling and REST APIs.
+    </p>
+    <div class="tech-stack">Python • FastAPI • SQL • REST APIs</div>
     <a class="project-link" href="https://github.com/tumelo05/crm-python-sql" target="_blank">
       View Project →
     </a>
   </div>
 </section>
 
-<section id="contact" class="hidden" style="padding:80px 8%">
-  <h2>Contact</h2>
+<!-- LEARNING -->
+<section class="hidden">
+  <h2 class="section-title">Currently Learning</h2>
+  <div class="learning">
+    <ul>
+      <li>Apache Kafka & event-driven architectures</li>
+      <li>Spark Structured Streaming</li>
+      <li>Data quality testing with Great Expectations</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="hidden">
+  <h2 class="section-title">Contact</h2>
   <p>
     LinkedIn:
     <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">
@@ -228,7 +286,6 @@ footer {
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* THEME */
 function toggleTheme() {
   document.body.classList.toggle("light-mode");
 }
