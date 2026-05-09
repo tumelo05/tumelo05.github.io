@@ -4,24 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Tumelo Sethosa | Data Analytics Portfolio</title>
+  <title>Tumelo Sethosa | Data Analytics & Engineering Portfolio</title>
+
+  <meta name="description" content="Data analytics and data engineering portfolio showcasing Spark ETL pipelines, SQL analytics, PostgreSQL, and Power BI projects." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -34,6 +28,7 @@
       width: 90%;
       max-width: 1100px;
       margin: auto;
+      animation: fadeIn 0.6s ease;
     }
 
     nav {
@@ -70,7 +65,7 @@
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
       font-size: 20px;
       color: #cbd5e1;
       margin-bottom: 35px;
@@ -88,6 +83,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .btn-primary {
@@ -143,13 +139,14 @@
       background: #1e293b;
       padding: 28px;
       border-radius: 14px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid transparent;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: #334155;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .project-card h3 {
@@ -180,6 +177,21 @@
       text-decoration: underline;
     }
 
+    .learning {
+      background: #1e293b;
+      padding: 28px;
+      border-radius: 14px;
+    }
+
+    .learning ul {
+      margin-left: 20px;
+      color: #cbd5e1;
+    }
+
+    .learning li {
+      margin-bottom: 10px;
+    }
+
     .contact p {
       margin-bottom: 14px;
       color: #cbd5e1;
@@ -198,33 +210,24 @@
       margin-top: 60px;
     }
 
-    @media(max-width: 768px) {
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 40px; }
+      .hero p { font-size: 18px; }
+      nav { flex-direction: column; gap: 12px; }
+    }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
     <nav>
       <h2>Tumelo Sethosa</h2>
-
       <div>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -233,31 +236,26 @@
     </nav>
 
     <section class="hero">
-
       <h1>Data Analytics & Data Engineering Projects</h1>
-
       <p>
-        MSc graduate building analytics systems, ETL pipelines, and business intelligence solutions using Python, SQL, Spark, PostgreSQL, and Power BI.
+        MSc graduate building analytics systems, scalable ETL pipelines,
+        and business intelligence solutions using Python, SQL, Apache Spark,
+        PostgreSQL, Docker, and Power BI.
       </p>
 
       <div class="buttons">
         <a class="btn btn-primary" href="https://github.com/tumelo05" target="_blank">
           View GitHub
         </a>
-
         <a class="btn btn-secondary" href="YOUR_CV_LINK_HERE" target="_blank">
           Download CV
         </a>
       </div>
-
     </section>
 
     <section id="skills">
-
       <h2 class="section-title">Tech Stack</h2>
-
       <div class="skills-grid">
-
         <div class="skill">Python</div>
         <div class="skill">SQL</div>
         <div class="skill">PySpark</div>
@@ -270,83 +268,71 @@
         <div class="skill">Git</div>
         <div class="skill">FastAPI</div>
         <div class="skill">REST APIs</div>
-
       </div>
-
     </section>
 
     <section id="projects">
-
       <h2 class="section-title">Featured Projects</h2>
 
       <div class="projects-grid">
 
         <div class="project-card">
-
           <h3>Customer Transactions Analytics</h3>
-
           <p>
-            End-to-end analytics solution transforming raw transaction data into structured business insights using Python, SQL Server, and Power BI dashboards.
+            End‑to‑end analytics solution transforming raw transaction data into
+            structured business insights using SQL and Power BI dashboards.
           </p>
-
-          <div class="tech-stack">
-            Python • SQL Server • Power BI • ETL
-          </div>
-
+          <div class="tech-stack">Python • SQL Server • Power BI • ETL</div>
           <div class="project-links">
             <a href="https://github.com/tumelo05/customer-transactions-analytics" target="_blank">
               View Repository →
             </a>
           </div>
-
         </div>
 
         <div class="project-card">
-
           <h3>Fleet Analytics Pipeline</h3>
-
           <p>
-            Spark ETL pipeline transforming raw fleet operational data into curated Parquet datasets and PostgreSQL analytics tables for downstream reporting workflows.
+            Spark ETL pipeline converting raw fleet operational data into curated
+            Parquet datasets and PostgreSQL analytics tables for reporting.
           </p>
-
-          <div class="tech-stack">
-            PySpark • PostgreSQL • Docker • JDBC
-          </div>
-
+          <div class="tech-stack">PySpark • PostgreSQL • Docker • JDBC</div>
           <div class="project-links">
             <a href="https://github.com/tumelo05/fleet-analytics" target="_blank">
               View Repository →
             </a>
           </div>
-
         </div>
 
         <div class="project-card">
-
           <h3>CRM Backend System</h3>
-
           <p>
-            Backend CRM system with relational database modelling, structured customer workflows, and REST API integration using Python and SQL.
+            Backend CRM system with relational data modelling and REST APIs
+            supporting structured customer workflows.
           </p>
-
-          <div class="tech-stack">
-            Python • FastAPI • SQL • REST APIs
-          </div>
-
+          <div class="tech-stack">Python • FastAPI • SQL • REST APIs</div>
           <div class="project-links">
             <a href="https://github.com/tumelo05/crm-python-sql" target="_blank">
               View Repository →
             </a>
           </div>
-
         </div>
 
       </div>
+    </section>
 
+    <section>
+      <h2 class="section-title">Currently Learning</h2>
+      <div class="learning">
+        <ul>
+          <li>Apache Kafka & event‑driven architectures</li>
+          <li>Spark Structured Streaming</li>
+          <li>Data quality testing with Great Expectations</li>
+        </ul>
+      </div>
     </section>
 
     <section id="contact" class="contact">
-
       <h2 class="section-title">Contact</h2>
 
       <p>
@@ -358,18 +344,21 @@
 
       <p>
         LinkedIn:
-        <a href="https://www.linkedin.com/in/tumelo-s-98341894/" target="_blank">
+        <a href="YOUR_LINKEDIN_URL_HERE" target="_blank">
           https://www.linkedin.com/in/tumelo-s-98341894/
         </a>
       </p>
-
     </section>
 
     <footer>
-      © 2026 Tumelo Sethosa— Data Analytics Portfolio
+      © <span id="year"></span> Tumelo Sethosa — Data Analytics Portfolio
     </footer>
 
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
