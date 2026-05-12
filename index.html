@@ -92,6 +92,17 @@ section {
   margin-bottom:30px;
 }
 
+/* ABOUT */
+#about {
+  border-top: 1px solid #1e293b;
+}
+
+#about p {
+  max-width:800px;
+  line-height:1.8;
+  color:#cbd5e1;
+}
+
 /* SKILLS */
 .skills-grid {
   display:flex;
@@ -173,6 +184,7 @@ footer {
 <nav>
   <h2>Tumelo Sethosa</h2>
   <div>
+    <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
@@ -189,13 +201,34 @@ footer {
       <a href="https://github.com/tumelo05" target="_blank">
         <img src="https://img.favpng.com/20/3/17/github-computer-icons-logo-repository-png-favpng-3D6iEY0b391hz9PYJZqnvKTLT.jpg">
       </a>
-      <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">
+      <a href="https://www.linkedin.com/in/tumelo-s-98341894/" target="_blank">
         <img src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png">
       </a>
     </div>
   </div>
 
   <img class="profile" src="https://i.imgur.com/54Hykuy.jpeg">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="hidden">
+  <h2 class="section-title">About Me</h2>
+  <p>
+    I'm a Data Engineering and Analytics professional with a background in 
+    Chemical Engineering and a strong focus on computational modelling and 
+    data-driven problem solving. Currently completing an MSc in Computational 
+    Modelling & Data Analytics at the University of Cape Town, I specialise in 
+    transforming complex datasets into structured, actionable insights.
+    <br><br>
+    My experience spans industry and academia — from applying quantitative 
+    analysis in industrial environments to supporting students as a Teaching 
+    Assistant in data modelling and data science. I’ve built end-to-end analytics 
+    solutions, designed ETL pipelines, and developed backend systems that 
+    enable efficient data workflows and decision-making.
+    <br><br>
+    I’m particularly interested in scalable data engineering, modern data 
+    architectures, and real-time processing systems.
+  </p>
 </section>
 
 <!-- TECH STACK -->
@@ -224,9 +257,7 @@ footer {
 
   <div class="card">
     <h3>Customer Transactions Analytics</h3>
-    <p>
-      End-to-end analytics solution transforming raw transaction data into structured business insights.
-    </p>
+    <p>End-to-end analytics solution transforming raw transaction data into structured business insights.</p>
     <div class="tech-stack">Python • SQL Server • Power BI • ETL</div>
     <a class="project-link" href="https://github.com/tumelo05/customer-transactions-analytics" target="_blank">
       View Project →
@@ -235,9 +266,7 @@ footer {
 
   <div class="card">
     <h3>Fleet Analytics Pipeline</h3>
-    <p>
-      Spark ETL pipeline converting raw fleet data into curated datasets for analytics.
-    </p>
+    <p>Spark ETL pipeline converting raw fleet data into curated datasets for analytics.</p>
     <div class="tech-stack">PySpark • PostgreSQL • Docker • JDBC</div>
     <a class="project-link" href="https://github.com/tumelo05/fleet-analytics" target="_blank">
       View Project →
@@ -246,9 +275,7 @@ footer {
 
   <div class="card">
     <h3>CRM Backend System</h3>
-    <p>
-      Backend CRM system with relational modelling and REST APIs.
-    </p>
+    <p>Backend CRM system with relational modelling and REST APIs.</p>
     <div class="tech-stack">Python • FastAPI • SQL • REST APIs</div>
     <a class="project-link" href="https://github.com/tumelo05/crm-python-sql" target="_blank">
       View Project →
@@ -271,10 +298,11 @@ footer {
 <!-- CONTACT -->
 <section id="contact" class="hidden">
   <h2 class="section-title">Contact</h2>
+  <p>Email: <a href="mailto:tumelo.j.sethosa@gmail.com">tumelo.j.sethosa@gmail.com</a></p>
   <p>
     LinkedIn:
-    <a href="https://linkedin.com/in/tumelo-sethosa" target="_blank">
-      linkedin.com/in/tumelo-sethosa
+    <a href="https://www.linkedin.com/in/tumelo-s-98341894/" target="_blank">
+      linkedin.com/in/tumelo-s-98341894
     </a>
   </p>
 </section>
@@ -290,7 +318,6 @@ function toggleTheme() {
   document.body.classList.toggle("light-mode");
 }
 
-/* TYPING */
 const roles = [
   "Building ETL Pipelines",
   "Designing Data Systems",
@@ -317,7 +344,6 @@ function type() {
 }
 type();
 
-/* SCROLL */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) entry.target.classList.add("show");
