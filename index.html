@@ -28,19 +28,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: 0.3s;
-}
-
-/* subtle background glow */
-body::before {
-  content: "";
-  position: fixed;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56,189,248,0.15), transparent);
-  z-index: -1;
 }
 
 /* NAV */
@@ -79,7 +66,6 @@ nav a:hover {
   box-shadow:0 0 40px rgba(56,189,248,0.4);
 }
 
-/* gradient heading */
 h1 {
   font-size:48px;
   background: linear-gradient(90deg, #38bdf8, #0ea5e9);
@@ -97,19 +83,17 @@ h1 {
 .icons img {
   width:32px;
   margin-right:12px;
-  cursor:pointer;
   transition:0.3s;
 }
 
 .icons img:hover {
-  transform:scale(1.2) rotate(5deg);
+  transform:scale(1.2);
   filter: drop-shadow(0 0 6px #38bdf8);
 }
 
 /* SECTIONS */
 section {
   padding:90px 8%;
-  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .section-title {
@@ -127,28 +111,34 @@ section {
 /* SKILLS */
 .skills-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+  gap:12px;
 }
 
 .skill {
   background: var(--card);
-  padding:12px 18px;
+  padding:10px 14px;
   border-radius:8px;
   transition:0.3s;
+  text-align:center;
 }
 
 .skill:hover {
   transform:translateY(-4px);
-  box-shadow:0 0 15px rgba(56,189,248,0.2);
+  box-shadow:0 0 12px rgba(56,189,248,0.2);
 }
 
-/* PROJECTS */
+/* PROJECTS GRID */
+.projects-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:20px;
+}
+
 .card {
   background: var(--card);
-  padding:22px;
+  padding:20px;
   border-radius:12px;
-  margin-bottom:20px;
   transition:0.3s;
 }
 
@@ -221,7 +211,7 @@ footer {
 
 <section class="hero hidden">
   <div>
-    <h1>Data Engineer & ML-Focused Analyst</h1>
+    <h1>Data Engineer & Analyst</h1>
     <div class="typing" id="typing"></div>
 
     <div class="icons">
@@ -242,48 +232,81 @@ footer {
   <p>
     I'm a Data Engineering and Analytics professional with a background in Chemical Engineering
     and a strong focus on computational modelling and data-driven problem solving.
-    I specialise in building scalable data systems, real-time pipelines, and analytics solutions
-    that transform raw data into actionable insights.
   </p>
 </section>
 
 <section id="skills" class="hidden">
   <h2 class="section-title">Tech Stack</h2>
   <div class="skills-grid">
+
+    <!-- ALL YOUR SKILLS KEPT -->
     <div class="skill">Python</div>
     <div class="skill">SQL</div>
     <div class="skill">PySpark</div>
-    <div class="skill">Apache Kafka</div>
     <div class="skill">PostgreSQL</div>
+    <div class="skill">SQL Server</div>
+    <div class="skill">Power BI</div>
     <div class="skill">Docker</div>
-    <div class="skill">Machine Learning</div>
-    <div class="skill">Scikit-learn</div>
-    <div class="skill">ETL Pipelines</div>
+    <div class="skill">Apache Kafka</div>
     <div class="skill">Streaming Systems</div>
+    <div class="skill">Machine Learning</div>
+    <div class="skill">ETL Pipelines</div>
+    <div class="skill">Data Modelling</div>
+    <div class="skill">Git</div>
+    <div class="skill">FastAPI</div>
+    <div class="skill">REST APIs</div>
+    <div class="skill">NLP</div>
+    <div class="skill">Pandas</div>
+    <div class="skill">Scikit-learn</div>
+    <div class="skill">Feature Engineering</div>
+    <div class="skill">Predictive Modelling</div>
+
   </div>
 </section>
 
 <section id="projects" class="hidden">
-  <h2 class="section-title">Featured Data & ML Projects</h2>
+  <h2 class="section-title">Featured Projects</h2>
 
-  <div class="card">
-    <h3>Real-Time Order Analytics & ML Pipeline</h3>
-    <p>Kafka + Spark pipeline enabling real-time analytics and predictive insights.</p>
-    <div class="tech-stack">Kafka • PySpark • PostgreSQL • ML</div>
-    <a class="project-link" href="https://github.com/tumelo05/real-time-order-analytics-ml" target="_blank">
-      View Project →
-    </a>
+  <div class="projects-grid">
+
+    <!-- ALL 5 PROJECTS KEPT -->
+
+    <div class="card">
+      <h3>Real-Time Order Analytics & ML Pipeline</h3>
+      <p>Kafka + Spark real-time pipeline with predictive insights.</p>
+      <div class="tech-stack">Kafka • PySpark • PostgreSQL • ML</div>
+      <a class="project-link" href="https://github.com/tumelo05/real-time-order-analytics-ml" target="_blank">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>Credit Risk Scoring Pipeline</h3>
+      <p>End-to-end ML pipeline for credit risk prediction.</p>
+      <div class="tech-stack">Python • Scikit-learn • Pandas</div>
+      <a class="project-link" href="https://github.com/tumelo05/credit-risk-scoring-pipeline" target="_blank">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>Customer Transactions Analytics</h3>
+      <p>Analytics system using SQL + Power BI.</p>
+      <div class="tech-stack">SQL • Power BI • ETL</div>
+      <a class="project-link" href="https://github.com/tumelo05/customer-transactions-analytics" target="_blank">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>Fleet Analytics Pipeline</h3>
+      <p>Spark ETL pipeline for fleet data.</p>
+      <div class="tech-stack">PySpark • PostgreSQL • Docker</div>
+      <a class="project-link" href="https://github.com/tumelo05/fleet-analytics" target="_blank">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>CRM Backend System</h3>
+      <p>Backend CRM with REST APIs.</p>
+      <div class="tech-stack">FastAPI • SQL • REST</div>
+      <a class="project-link" href="https://github.com/tumelo05/crm-python-sql" target="_blank">View →</a>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h3>Credit Risk Scoring Pipeline</h3>
-    <p>Machine learning pipeline for predictive credit risk modelling.</p>
-    <div class="tech-stack">Python • Scikit-learn • Pandas</div>
-    <a class="project-link" href="https://github.com/tumelo05/credit-risk-scoring-pipeline" target="_blank">
-      View Project →
-    </a>
-  </div>
-
 </section>
 
 <section id="contact" class="hidden">
@@ -302,7 +325,7 @@ function toggleTheme() {
   document.body.classList.toggle("light-mode");
 }
 
-const roles = ["Building Data Pipelines","Real-Time Systems","Machine Learning"];
+const roles = ["Building ETL Pipelines","Real-Time Systems","Machine Learning"];
 
 let i = 0, j = 0, current = "", isDeleting = false;
 
